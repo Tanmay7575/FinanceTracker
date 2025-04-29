@@ -6,8 +6,8 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-
-mongoose.connect("mongodb+srv://user2001:xfzwDMUgge4sF01O@cluster0.rso0d.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0") //Replace If you are using Atlas API
+const dbUrl=process.env.ALT_URL;
+mongoose.connect(dbUrl)//Replace If you are using Atlas API
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.error("Failed to connect to MongoDB", err));
 
